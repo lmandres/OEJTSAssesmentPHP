@@ -90,6 +90,11 @@ if (
 
 session_destroy();
 
+$scoreIE = 3 + (($scaleIE - 24) / 8);
+$scoreSN = 3 + (($scaleSN - 24) / 8);
+$scoreFT = 3 + (($scaleFT - 24) / 8);
+$scoreJP = 3 + (($scaleJP - 24) / 8);
+
 ?>
 
 
@@ -111,6 +116,16 @@ session_destroy();
 	<body style="margin: 0;padding: 0;">
 
 	<h1>Your personality type is <?= $ptype ?>.</h1>
+
+	<p>
+		You can get further results on your
+		personality type by clicking the link
+		below.<br />
+		<br />
+		Note: You will be redirected to an external website.
+	</p>
+
+	<p><a href="https://openpsychometrics.org/tests/OEJTS/results.php?r=<?= $scoreIE ?>,<?= $scoreSN ?>,<?= $scoreFT ?>,<?= $scoreJP ?>">Take me to Open Psychometrics</a></p>
 
 	</body>
 
