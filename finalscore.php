@@ -78,19 +78,10 @@ if ($scaleJP > 24) {
 	$ptype .= "J";
 }
 
-print_r($responses);
-
-echo "<br />";
-echo $scaleIE . "<br />";
-echo $scaleSN . "<br />";
-echo $scaleFT . "<br />";
-echo $scaleJP . "<br />";
-echo "<br />";
-echo (($scaleIE - 25) / 10 / 0.9) . "<br />";
-echo (($scaleSN - 25) / 10 / 0.9) . "<br />";
-echo (($scaleFT - 25) / 10 / 0.9) . "<br />";
-echo (($scaleJP - 25) / 10 / 0.9) . "<br />";
-echo "<br />";
-echo $ptype;
+if (isset($_SESSION["redirect"])) {
+	$redirecturl = $_SESSION["redirect"] . "&personalitytype=" . $ptype;
+	header("Location: " . $redirecturl);
+	exit();
+}
 
 ?>

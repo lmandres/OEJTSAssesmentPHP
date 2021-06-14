@@ -4,7 +4,6 @@ session_start();
 
 if (
 	isset($_GET["question"]) &&
-	isset($_GET["qresponse"]) &&
 	isset($_SESSION["responses"])
 ) {
 
@@ -24,7 +23,15 @@ if (
        		((1 <= $response) && ($response <= 5))
 	) {
 		$_SESSION["responses"][$question] = $response;
+	} else if (
+		((0 <= $question) && ($question <= 31)) &&
+		!((1 <= $response) && ($response <= 5))
+	) {
+		$_GET["question"] = $question;
 	}
+} else {
+	header("Location: https://personalityconnect.me/assessment");
+	exit();
 }
 
 ?>

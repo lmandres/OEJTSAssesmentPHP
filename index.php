@@ -1,7 +1,12 @@
 <?php
 
 session_start();
+
 $_SESSION["responses"] = array();
+
+if (isset($_GET["redirect"])) {
+	$_SESSION["redirect"] = urldecode($_GET["redirect"]);
+}
 
 ?>
 
