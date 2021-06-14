@@ -78,10 +78,40 @@ if ($scaleJP > 24) {
 	$ptype .= "J";
 }
 
-if (isset($_SESSION["redirect"])) {
+if (
+	isset($_SESSION["redirect"]) &&
+	$_SESSION["redirect"] != ""
+) {
 	$redirecturl = $_SESSION["redirect"] . "&personalitytype=" . $ptype;
+	session_destroy();
 	header("Location: " . $redirecturl);
 	exit();
 }
 
+session_destroy();
+
 ?>
+
+
+<!DOCTYPE html>
+
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Myers-Briggs/Jung Test: Open Extended Jungian Type Scales</title>
+	<link rel="stylesheet" href="blue-style.css" type="text/css" id="" media="print, projection, screen" />
+	<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
+	 <meta name="description" content="Free personality testing measuring Myers-Briggs or Jungian types, 3-6 minutes.">
+	<style type="text/css">
+	td, th, div
+	{
+		font-family: "Arvo", serif;
+	}
+	</style>
+	</head>
+	<body style="margin: 0;padding: 0;">
+
+	<h1>Your personality type is <?= $ptype ?>.</h1>
+
+	</body>
+
+	</html>
