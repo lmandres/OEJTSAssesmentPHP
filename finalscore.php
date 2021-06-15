@@ -125,7 +125,7 @@ $scoreJP = 3 + (($scaleJP - 24) / 8);
 		Note: You will be redirected to an external website.
 	</p>
 
-	<p><a href="https://openpsychometrics.org/tests/OEJTS/results.php?r=<?= $scoreIE ?>,<?= $scoreSN ?>,<?= $scoreFT ?>,<?= $scoreJP ?>">Take me to Open Psychometrics</a></p>
+	<p><a href="https://openpsychometrics.org/tests/OEJTS/results.php?r=<?= $scoreIE ?>,<?= $scoreSN ?>,<?= $scoreFT ?>,<?= $scoreJP ?>">Take me to the Open-Source Psychometrics Project.</a></p>
 
 	</body>
 
